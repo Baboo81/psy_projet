@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class HomeController extends Controller
+{
+    public function index(): View
+    {
+        /**
+         * On récupère les datas depuiss le fichier : App/Data/home.php
+         */
+        $homeData = require app_path('Data/home.php');
+
+        /**
+         *  On retourne la vue avec les datas :
+         */
+        return view('home', compact('homeData'));
+    }
+
+}
